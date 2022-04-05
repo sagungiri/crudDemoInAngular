@@ -1,0 +1,29 @@
+<header class="sticky-header-cointainer">
+  <div class="sticky-header">
+    <span class="headerClass">
+      <h1>User CRUD Operation</h1>
+    </span>
+    <span class="menu-img-container"> 
+        <img class="menu-img menu-img-user" (click)="goToDetailPage('0')" src="{{ global.addIcon }}" />
+         <img class="menu-img" (click)="navigateToTrash()" src="{{ global.trashIcon }}" /> </span>
+  </div>
+</header>
+<body class="user-table-cointainer" >
+    <div class="table-buttons"></div>
+    <div class="table-header">
+        <span class="table-header-span">User ID</span>
+        <span class="table-header-span">Username</span>
+        <span class="table-header-span">User Age</span>
+        <span class="table-header-span">User Salary</span>
+        <span class="table-header-span">DELETE</span>
+    </div>
+    <div  *ngFor="let user of userArray">
+        <div class="table-body" (click)="goToDetailPage(user.id)">
+        <span class="table-body-span">{{user.id}}</span>
+        <span class="table-body-span">{{user.employee_name}}</span>
+        <span class="table-body-span">{{user.employee_age}}</span>
+        <span class="table-body-span">{{user.employee_salary}}</span>
+        <span class="table-body-span" (click)="$event.stopPropagation();deleteUser(user.id)"><a>DELETE</a></span>
+    </div>
+    </div>
+</body>

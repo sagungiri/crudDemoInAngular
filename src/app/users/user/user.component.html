@@ -1,0 +1,29 @@
+<header class="sticky-header-lesson">
+    <div class="sticky-header">
+      <span class="headerClass">
+        <h1>User CRUD Operation</h1>
+      </span>
+      <span class="menu-img-container" (click)="navigateToTrash()"> <img class="menu-img" src="{{ global.trashIcon }}" /> </span>
+    </div>
+  </header>
+  <body>
+    <form id="form">
+      <div class="form-field">
+        <label>Name:</label>
+        <input type="text" name="name" FormControlName="Name">
+      </div>
+      <div class="form-field">
+        <label>Age:</label>
+        <input type="number" name="number" FormControlName="Age">
+      </div>
+      <div class="form-field">
+        <label>Salary:</label>
+        <input type="number" name="salary" FormControlName="Salary">
+      </div>
+      <div class="form-field" (click)="submitDetail()">
+        <label for=""></label>
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+
